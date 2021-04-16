@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
-import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
+import { NavLink, withRouter } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { connect } from 'react-redux'
 
-function Header() {
+const Header = props => {
+  console.log(props.user)
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -24,29 +27,11 @@ function Header() {
             </NavDropdown>
           </Nav>
           <Nav>
-
-
-            {/* <NavDropdown title="Login">
-              <NavDropdown.Item>
-                <Form >
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                  </Form.Group>
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                  </Form.Group>
-                  <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
-                </Form>
-              </NavDropdown.Item>
-            </NavDropdown> */}
-
+            {/* (!localStorage.getItem("token") ? */}
             <Nav.Link as={NavLink} to="/signup">Sign Up</Nav.Link>
-            <Nav.Link as={NavLink} to="/login">Log In</Nav.Link>
+            <Nav.Link as={NavLink} to="/login">Log In</Nav.Link>:
             <Nav.Link as={NavLink} to="/bookmarked">Bookmarked</Nav.Link>
+            <Nav.Link ><div onClick={props.handleLogout}>Log out</div></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -54,4 +39,8 @@ function Header() {
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {user: state.user}
+}
+
+export default connect(mapStateToProps)(withRouter(Header))
