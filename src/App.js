@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import About from "./About";
 import Header from "./Header";
 import Home from "./Home";
@@ -31,7 +31,6 @@ class App extends Component {
   //we now call it by saying this.props.createUser
   //that action takes in ana argument(user), that is what our payload will be. 
   
-
   componentDidMount() {
     const token = localStorage.token;
     if (token) {
@@ -58,6 +57,7 @@ class App extends Component {
   handleLogout = () => {
     localStorage.removeItem("token")
     this.props.createUser({user: { } })
+    this.props.history.push("/");
   }
 
   handleLogin = (e, userInfo) => {
@@ -103,7 +103,6 @@ class App extends Component {
           <Route path="/about-us" component={About} />
           <Route path="/signup" render={this.renderSignUpPage} />
           <Route path="/login" render={this.renderLoginPage} />
-          {!localStorage.getItem("token") ? <Redirect to="/login" /> : null}
           <Route path="/bookmarked" component={Bookmarked} />
         </Switch>
       </div>

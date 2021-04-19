@@ -3,8 +3,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { connect } from 'react-redux'
 
 const Header = props => {
-  console.log(props.user)
-
+  
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

@@ -1,10 +1,11 @@
-const initialState = {
+import { combineReducers } from 'redux'
+
+
+//USER REDUCER
+const initialUserState = {
     user: null
 }
-
-
-
-const rootReducer = (state=initialState, action) => {
+const userReducer = (state=initialUserState, action) => {
     switch(action.type) {
         case "SET_USER": {
             return {...state, user: action.payload}
@@ -13,7 +14,25 @@ const rootReducer = (state=initialState, action) => {
     }
 }
 
-export default rootReducer;
+//CAR REDUCER
+const initialCarState = {
+    cars: [] 
+}
+const carReducer = (state=initialCarState, action) => {
+    switch(action.type) {
+        case "LOAD_CARS": {
+            return {...state, cars: action.payload}
+        }
+        default: return state
+    }
+}
+
+//COMBINE REDUCER
+export default combineReducers({
+   userReducer,
+   carReducer,
+  });
+
 
 //takes in two arguments, current state && action(end goal to change state)
 //our initial state can be imported from another file with data
