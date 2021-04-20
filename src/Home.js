@@ -15,7 +15,13 @@ class Home extends Component {
   }
 
   renderCars = () => {
-    return this.props.cars.map((car) => (
+    let sel;
+    if (this.props.selected !== "All"){
+    sel = this.props.cars.filter((car) => car.make.includes(this.props.selected)) 
+    } else {
+      sel = this.props.cars 
+    }
+    return sel.map((car) => (
       <CarCard
         key={car.id}
         photos={car.photos}
@@ -38,7 +44,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { cars: state.carReducer.cars };
+  return { cars: state.carReducer.cars, selected: state.selectReducer.selected };
 };
 
-export default connect(mapStateToProps, { getCars })(Home);
+export default connect(mapStateToProps, {getCars})(Home);

@@ -27,15 +27,23 @@ const carReducer = (state=initialCarState, action) => {
     }
 }
 
+const initialSelect = {
+    selected: "All"
+}
+
+const selectReducer = (state=initialSelect, action) => {
+    switch(action.type){
+        case "SELECTED_CARS": {
+            return {...state, selected: action.payload}
+        }
+        default: return state 
+    }
+}
+
 //COMBINE REDUCER
 export default combineReducers({
    userReducer,
    carReducer,
+   selectReducer
   });
 
-
-//takes in two arguments, current state && action(end goal to change state)
-//our initial state can be imported from another file with data
-//the action.payload is going to be our user data that we passed into the action. 
-
-//what is the combineReducers for?

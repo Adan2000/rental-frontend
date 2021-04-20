@@ -24,6 +24,7 @@ const Header = props => {
               <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Mercedes</div></NavDropdown.Item>
               <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Mclaren</div></NavDropdown.Item>
               <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Ferrari</div></NavDropdown.Item>
+              <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>All</div></NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

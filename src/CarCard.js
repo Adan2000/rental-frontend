@@ -13,11 +13,11 @@ import {
 class CarCard extends Component {
   render() {
     const { photos, make, model } = this.props;
-    // console.log(this.props);
+
     return (
       <div>
           <Card>
-            <Carousel width="100%" showArrows={true} infiniteLoop={true} className="cara" showThumbs={false}>
+            <Carousel width="100%" showArrows={true} infiniteLoop={true} className="card" showThumbs={false} >
               <CardImg 
                 width="100%"
                 src={photos[0].url}
@@ -46,7 +46,7 @@ class CarCard extends Component {
               <CardTitle tag="h5" className="mb-2 text-muted">{make} {model}</CardTitle>
               </>:<>
               <CardTitle tag="h5" className="mb-2 text-muted">{make} {model}</CardTitle>
-              <Button >Bookmark</Button> </>}
+              <Button>Bookmark</Button> </>}
             </CardBody>
           </Card>
       </div>
