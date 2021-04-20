@@ -60,6 +60,10 @@ class App extends Component {
     this.props.history.push("/");
   }
 
+  handleSelect = (e) => {
+    console.log(e.target.innerHTML)
+  }
+
   handleLogin = (e, userInfo) => {
     e.preventDefault();
     console.log("login", userInfo);
@@ -97,7 +101,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header handleLogout={this.handleLogout}/>
+        <Header handleLogout={this.handleLogout} handleSelect={this.handleSelect}/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about-us" component={About} />

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCars } from "./redux/actions/userActions";
 import CarCard from "./CarCard";
-import { CardDeck } from "reactstrap";
-import { Container, Row, Col } from "react-bootstrap";
 
 const carAPI = "http://localhost:3000/api/v1/cars";
 
@@ -29,17 +27,12 @@ class Home extends Component {
     ));
   };
 
+
   render() {
     return (
-      // <Container>
-      //   <Row>
-      //     <Col>
             <div className="cardcontainer">
               {this.renderCars()}
             </div>
-          /* </Col>
-        </Row>
-      </Container> */
     );
   }
 }

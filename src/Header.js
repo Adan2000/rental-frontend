@@ -3,8 +3,9 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { connect } from 'react-redux'
 
 const Header = props => {
-  
+
   return (
+  
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>EXOTIC RENTALS</Navbar.Brand>
@@ -18,11 +19,11 @@ const Header = props => {
             <Nav.Link as={NavLink} to="/about-us">
               About Us
             </Nav.Link>
-            <NavDropdown title="Brands">
-              <NavDropdown.Item>Lamborghini</NavDropdown.Item>
-              <NavDropdown.Item>Mercedes</NavDropdown.Item>
-              <NavDropdown.Item>Mclaren</NavDropdown.Item>
-              <NavDropdown.Item>Ferrari</NavDropdown.Item>
+            <NavDropdown title="Categories">
+              <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Lamborghini</div></NavDropdown.Item>
+              <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Mercedes</div></NavDropdown.Item>
+              <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Mclaren</div></NavDropdown.Item>
+              <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Ferrari</div></NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
