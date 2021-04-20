@@ -29,9 +29,11 @@ const Header = props => {
             {!localStorage.getItem("token") ? 
             <>
             <Nav.Link as={NavLink} to="/signup">Sign Up</Nav.Link>
-            <Nav.Link as={NavLink} to="/login">Log In</Nav.Link></>:<>
+            <Nav.Link as={NavLink} to="/login">Log In</Nav.Link>
+            </>:<>
             <Nav.Link as={NavLink} to="/bookmarked">Bookmarked</Nav.Link>
-            <Nav.Link ><div onClick={props.handleLogout}>Log out</div></Nav.Link></>}
+            <Nav.Link ><div onClick={props.handleLogout}>Log out</div></Nav.Link>
+            </>}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

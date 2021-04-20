@@ -1,23 +1,55 @@
 .about-page {
-    margin: 100px;
-} 
+  margin: 100px;
+}
 
 .home-page {
-    margin: 100px;
+  margin: 100px;
 }
 
 .sign-up-page {
-    margin: 100px;
+  margin: 100px;
 }
 
 .log-in-page {
-    margin: 100px;
+  margin: 100px;
 }
 
 .bookmarked-page {
-    margin: 100px;
+  margin: 100px;
 }
 
 .input {
-    width: 100%;
+  width: 100%;
+}
+
+.cardcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.cardcontainer:hover {
+  opacity: 5;
+}
+
+.card-body {
+  text-align: center;
+}
+
+
+/* .container:hover .image */
+.slide.selected:hover .img1 {
+  opacity: 0.5;
+}
+
+
+
+
+
+.thumbs-wrapper.axis-vertical {
+    display: none;
+}
+
+.card {
+    display: none;
 }
