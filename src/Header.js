@@ -12,13 +12,8 @@ const Header = props => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={NavLink} to="/">
-              {" "}
-              Home{" "}
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/about-us">
-              About Us
-            </Nav.Link>
+            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/about-us">About Us</Nav.Link>
             <NavDropdown title="Categories">
               <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Lamborghini</div></NavDropdown.Item>
               <NavDropdown.Item><div onClick={(e) => props.handleSelect(e)}>Mercedes</div></NavDropdown.Item>

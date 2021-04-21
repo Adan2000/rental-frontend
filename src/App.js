@@ -6,8 +6,10 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from './SignUp'
 import Bookmarked from "./Bookmarked";
+import SingleCar from './SingleCar'
 import { connect } from 'react-redux'
 import { createUser, selectedCars } from './redux/actions/userActions'
+
 
 
 
@@ -42,7 +44,6 @@ class App extends Component {
     })
     .then((resp) => resp.json())
     .then((data) => {
-      console.log(data)
       if(data.user) {
         this.props.createUser(data.user)
       }
@@ -105,6 +106,7 @@ class App extends Component {
           <Route path="/signup" render={this.renderSignUpPage} />
           <Route path="/login" render={this.renderLoginPage} />
           <Route path="/bookmarked" component={Bookmarked} />
+          <Route path="/car-preview" component={SingleCar} />
         </Switch>
       </div>
     );

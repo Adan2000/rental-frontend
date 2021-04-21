@@ -27,10 +27,10 @@ const carReducer = (state=initialCarState, action) => {
     }
 }
 
+//SELECT REDUCER
 const initialSelect = {
     selected: "All"
 }
-
 const selectReducer = (state=initialSelect, action) => {
     switch(action.type){
         case "SELECTED_CARS": {

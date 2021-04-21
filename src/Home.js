@@ -6,6 +6,7 @@ import CarCard from "./CarCard";
 const carAPI = "http://localhost:3000/api/v1/cars";
 
 class Home extends Component {
+  
   componentDidMount() {
     fetch(carAPI)
       .then((res) => res.json())
@@ -21,8 +22,11 @@ class Home extends Component {
     } else {
       sel = this.props.cars 
     }
+
     return sel.map((car) => (
       <CarCard
+        user={this.props.user}
+        id={car.id}
         key={car.id}
         photos={car.photos}
         model={car.model}
@@ -44,7 +48,11 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { cars: state.carReducer.cars, selected: state.selectReducer.selected };
+  return { 
+    cars: state.carReducer.cars, 
+    selected: state.selectReducer.selected, 
+    user: state.userReducer.user 
+  };
 };
 
 export default connect(mapStateToProps, {getCars})(Home);
