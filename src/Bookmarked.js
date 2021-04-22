@@ -27,7 +27,7 @@ class Bookmarked extends Component {
 
   render() {
     return (
-      <div className="bookmarked">
+      <div >
         {this.props.bookmarks.map((bookmark) => {
           console.log(bookmark);
           return (

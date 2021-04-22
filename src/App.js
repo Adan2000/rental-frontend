@@ -106,7 +106,7 @@ class App extends Component {
           <Route path="/signup" render={this.renderSignUpPage} />
           <Route path="/login" render={this.renderLoginPage} />
           <Route path="/bookmarked" component={Bookmarked} />
-          <Route path="/car-preview" component={SingleCar} />
+          <Route path="/car-preview/:id" component={SingleCar} />
         </Switch>
       </div>
     );

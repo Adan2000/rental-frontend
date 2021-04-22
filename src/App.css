@@ -61,7 +61,125 @@
     display: none;
 }
 
-.bookmark {
-  color: orange;
+
+.contact {
+  margin:10em ;
+  margin-left: 40em;
+  margin-right: 40em;
 }
 
+.contactButton {
+  position: relative;
+  top: 2em;
+  left: 18em;
+}
+
+.Contacth1 {
+  font-size: 3em;
+  color: orange;
+  position: relative;
+  top: -.75em;
+  left: 4.5em; 
+}
+
+.title {
+  font-style: italic;
+  font-size: 1.5em;
+  padding-right:1em;
+}
+.home {
+  font-size: 1.25em;
+}
+.about {
+  font-size: 1.25em;
+}
+.dropdown {
+  font-size: 1.25em;
+}
+.bookmark {
+  font-size: 1.45em;
+
+}
+.logout {
+  font-size: 1.45em;
+  padding-right: 1em;
+}
+
+.info {
+  color: orange;
+  font-size: 1.5em;
+  position: relative;
+  left: 6em;
+  top: 3em;
+}
+
+.src {
+  height: 500px;
+  width: max-content;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+}
+.view:hover {
+  text-decoration: none;
+  color: orange;
+}
+.view {
+  color:orange;
+}
+.viewbutton {
+  margin:1em;
+}
+
+.singlecar {
+  position: relative;
+  height: 50em;
+  width: 50em;
+  margin-left: 31em;
+  margin-top: 5em;
+}
+.makemodel {
+  position: relative;
+  left: 10.5em;
+  bottom: 5em;
+  font-size: 3em;
+  font-style: italic;
+}
+
+.hp {
+  position: relative;
+  left: 10.5em;
+  bottom: 5em;
+  font-size: 3em;
+  font-style: italic;
+}
+
+.tq {
+  position: relative;
+  left: 10.5em;
+  bottom: 5em;
+  font-size: 3em;
+  font-style: italic;
+}
+
+.one {
+  position: relative;
+  right: 4em;
+  bottom: 10em;
+  margin-left: 40em;
+  margin-right: 40em;
+}
+
+.two {
+  position: relative;
+  bottom: 0.4em;
+  left: 4em;
+  color: orange;
+
+}
+
+.three {
+  font-size: 3em;
+  color: orange;
+  position: relative;
+  left: 15em;
+  top: 3em;
+}

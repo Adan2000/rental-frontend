@@ -10,7 +10,8 @@ import {
   CardBody,
 } from "reactstrap";
 import {Link} from 'react-router-dom'
-import SingleCar from "./SingleCar";
+// import SingleCar from "./SingleCar";
+import {connect} from 'react-redux'
 
 const API = "http://localhost:3000/api/v1"
 
@@ -31,15 +32,11 @@ class CarCard extends Component {
       .catch(console.log);
   }
 
-  handleProps = (e) => {
-    console.log(e)
-   
-  }
-
+  
   render() {
 
     const { photos, make, model } = this.props;
-    // console.log(this.props.user.bookmarks.car)
+
     return (
       <div>
           <Card>
@@ -73,7 +70,10 @@ class CarCard extends Component {
               <CardTitle tag="h5" className="mb-2 text-muted">
                 <Link onClick={()=>{this.handleProps(this.props)}}to="/car-preview" className="linktag">{make} {model}</Link>
               </CardTitle>
-              {localStorage.getItem("token")  && this.props.id !== this.props.user.bookmarks && <Button size="sm" outline color="warning" onClick={()=> this.handleBookMark()}>Bookmark</Button>}
+              
+              <Button className="viewbutton" size="sm" outline color="warning"><Link className="view" to={{pathname: `/car-preview/${this.props.id}`,car:this.props }}>View</Link> </Button> 
+              
+              {localStorage.getItem("token")   && <Button size="sm" outline color="warning" onClick={(e)=> this.handleBookMark(e)}>Bookmark</Button>}
             </CardBody>
           </Card>
       </div>
@@ -81,7 +81,17 @@ class CarCard extends Component {
   }
 }
 
-export default CarCard;
+const mapStateToProps = (state) => {
+  return {
+    cars: state.carReducer.cars, 
+    selected: state.selectReducer.selected, 
+    user: state.userReducer.user 
+  }
+}
+
+export default connect(mapStateToProps)(CarCard)
+
+
 
 
 

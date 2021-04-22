@@ -44,9 +44,12 @@ class Home extends Component {
 
   render() {
     return (
+         <div>
+           HELLO IMAGE HERE
             <div className="cardcontainer">
               {this.renderCars()}
             </div>
+          </div>
     );
   }
 }
