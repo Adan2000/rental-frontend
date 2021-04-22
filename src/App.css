@@ -25,7 +25,18 @@
 .cardcontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 25px;
+  margin-top: 6em;
+  margin-right: 5em;
+  margin-left: 5em;
+  margin-bottom: 11em;
+  grid-gap: 2em;
+}
+
+.bookmarked {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin:10em ;
+  grid-gap: 2em;
 }
 
 .cardcontainer:hover {
@@ -36,13 +47,21 @@
   text-align: center;
 }
 
-
-.slide.selected:hover .img1 {
-  opacity: 0.5;
+.linktag {
+  color: grey;
+  font-style: italic;
 }
 
+.linktag:hover {
+  color:orange;
+  cursor: pointer;
+  text-decoration: none;
+}
 .thumbs-wrapper.axis-vertical {
     display: none;
 }
 
+.bookmark {
+  color: orange;
+}
 

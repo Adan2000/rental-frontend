@@ -52,7 +52,7 @@ class App extends Component {
 
   handleLogout = () => {
     localStorage.removeItem("token")
-    this.props.createUser({user: { } })
+    this.props.createUser({user: { bookmarks: [] } })
     this.props.history.push("/");
   }
 

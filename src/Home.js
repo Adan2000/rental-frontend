@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import { getCars } from "./redux/actions/userActions";
 import CarCard from "./CarCard";
 
+
+
+
+
 const carAPI = "http://localhost:3000/api/v1/cars";
 
 class Home extends Component {

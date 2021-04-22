@@ -13,10 +13,16 @@ export const getCars = (car) => {
 } 
 
 export const selectedCars = (cars) => {
-    return{
+    return {
         type: "SELECTED_CARS",
         payload: cars
     }
 }
 
+export const deleteBookMark = (bookmark) => {
+    return {
+        type: 'DELETE_BOOKMARK',
+        payload: bookmark
+    }
+}
 

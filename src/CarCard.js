@@ -9,7 +9,8 @@ import {
   CardTitle,
   CardBody,
 } from "reactstrap";
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import SingleCar from "./SingleCar";
 
 const API = "http://localhost:3000/api/v1"
 
@@ -27,26 +28,30 @@ class CarCard extends Component {
       body: JSON.stringify({ bookmark: {user_id: this.props.user.id, car_id: this.props.id} }),
     })
       .then((resp) => resp.json())
-      // .then((res) => console.log(res))
       .catch(console.log);
+  }
+
+  handleProps = (e) => {
+    console.log(e)
+   
   }
 
   render() {
 
     const { photos, make, model } = this.props;
-
+    // console.log(this.props.user.bookmarks.car)
     return (
       <div>
           <Card>
-            <Link to="/car-preview">
             <Carousel width="100%" showArrows={true} infiniteLoop={true} className="card" showThumbs={false}>
+
               <CardImg 
                 width="100%"
                 src={photos[0].url}
                 alt="Card image cap"
                 className="img1"
-                onClick={this.handleRoute}
               />
+
               <CardImg
                 width="100%"
                 src={photos[1].url}
@@ -62,15 +67,13 @@ class CarCard extends Component {
                 src={photos[3].url}
                 alt="Card image cap"
               />
+
             </Carousel>
-            </Link>
             <CardBody className="body">
-              {!localStorage.getItem("token") ? 
-              <>
-              <CardTitle tag="h5" className="mb-2 text-muted">{make} {model}</CardTitle>
-              </>:<>
-              <CardTitle tag="h5" className="mb-2 text-muted">{make} {model}</CardTitle>
-              <Button onClick={(e)=> this.handleBookMark(e)}>Bookmark</Button> </>}
+              <CardTitle tag="h5" className="mb-2 text-muted">
+                <Link onClick={()=>{this.handleProps(this.props)}}to="/car-preview" className="linktag">{make} {model}</Link>
+              </CardTitle>
+              {localStorage.getItem("token")  && this.props.id !== this.props.user.bookmarks && <Button size="sm" outline color="warning" onClick={()=> this.handleBookMark()}>Bookmark</Button>}
             </CardBody>
           </Card>
       </div>
@@ -79,3 +82,19 @@ class CarCard extends Component {
 }
 
 export default CarCard;
+
+
+
+
+
+
+
+// && bookmark.car.id == car.id
+
+// this.props.user.bookmarks
+
+// (e)=> this.handleBookMark(e)
+
+//this.props.id   CAR ID
+
+//this.props.user.bookmarks BOOKMARK
